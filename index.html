@@ -41,7 +41,6 @@
     .navbar-links a {margin-left: 20px; color: #fff; transition: .3s;}
     .navbar-links a:hover {color: #b3e5ff;}
 
-    /* Social icons */
     .social-link {
       background: #1877f2;
       color: #fff !important;
@@ -145,7 +144,6 @@
       .qc-icon {width: 32px; height: 32px; font-size: 16px;}
     }
 
-    /* Login/Signup Modal */
     #authModal {
       position: fixed; top:0; left:0; width:100%; height:100%;
       background: rgba(0,0,0,.6);
@@ -174,7 +172,6 @@
       display:block; margin-top:10px; text-align:center; color:#fff; cursor:pointer;
     }
 
-    /* ✅ Back to Top Button */
     #backToTop {
       position: fixed;
       bottom: 90px;
@@ -200,7 +197,7 @@
 </head>
 <body>
 
-<!-- Login System Modal -->
+<!-- Login Modal -->
 <div id="authModal">
   <div class="auth-box" id="loginBox">
     <h3>Login</h3>
@@ -219,7 +216,7 @@
   </div>
 </div>
 
-<!-- Main Website -->
+<!-- Main Site -->
 <div id="mainSite" style="display:none;">
   <header class="navbar">
     <a href="#home" class="navbar-brand">Hassan Chauffeur</a>
@@ -263,8 +260,14 @@
     <p>Phone: <a href="tel:+447842693753">📞 +447842693753</a></p>
   </section>
 
+  <!-- ✅ Updated Footer with UnionPay Logo -->
   <footer class="footer">
     <h4>Hassan's Private Driver</h4>
+
+    <div style="display:flex; justify-content:center; align-items:center; gap:15px; margin-top:10px;">
+      <img src="https://m.unionpayintl.com/imp_file/global/wap/pk/static/images/logo.png" alt="UnionPay" style="height:40px;">
+    </div>
+
     <p>&copy; 2025 Hassan's Private Driver. All rights reserved.</p>
   </footer>
 
@@ -273,7 +276,7 @@
     <div class="qc-icon">💬</div><span>Quick Connect</span>
   </div>
 
-  <!-- ✅ Back to Top Button -->
+  <!-- Back to Top -->
   <button id="backToTop" title="Go to top">
     <i class="fas fa-arrow-up"></i>
   </button>
@@ -325,7 +328,6 @@ window.onload = function(){
   }
 };
 
-// ✅ Back to Top Button Logic
 const backToTop = document.getElementById("backToTop");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) backToTop.style.display = "block";
@@ -338,4 +340,4 @@ backToTop.addEventListener("click", () => {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html>
+  </html>
