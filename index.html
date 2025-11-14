@@ -37,7 +37,13 @@
       background: rgba(255,255,255,.2); backdrop-filter: blur(8px);
       z-index: 1000;
     }
-    .navbar-brand {font-size: 1.5em; font-weight: 700; color: #004aad;}
+    .navbar-brand {
+      font-size: 1.5em; font-weight: 700; color: #004aad;
+      display: flex; align-items: center;
+    }
+    .navbar-brand img {
+      height: 40px; margin-right: 10px;
+    }
     .navbar-links a {margin-left: 20px; color: #fff; transition: .3s;}
     .navbar-links a:hover {color: #b3e5ff;}
 
@@ -219,7 +225,10 @@
 <!-- Main Site -->
 <div id="mainSite" style="display:none;">
   <header class="navbar">
-    <a href="#home" class="navbar-brand">Hassan Chauffeur</a>
+    <a href="#home" class="navbar-brand">
+      <img src="https://i.postimg.cc/2SmKWCBf/file-0000000032347208bcd3a253ab130a9d.png" alt="Hassan Chauffeur Logo">
+      Hassan Chauffeur
+    </a>
     <nav class="navbar-links">
       <a href="#services">Services</a>
       <a href="#about">About</a>
@@ -260,14 +269,13 @@
     <p>Phone: <a href="tel:+447842693753">📞 +447842693753</a></p>
   </section>
 
-  <!-- ✅ Updated Footer with UnionPay Logo -->
+  <!-- ✅ Updated Footer with Logo -->
   <footer class="footer">
     <h4>Hassan's Private Driver</h4>
-
     <div style="display:flex; justify-content:center; align-items:center; gap:15px; margin-top:10px;">
+      <img src="https://i.postimg.cc/2SmKWCBf/file-0000000032347208bcd3a253ab130a9d.png" alt="Hassan Chauffeur Logo" style="height:40px;">
       <img src="https://m.unionpayintl.com/imp_file/global/wap/pk/static/images/logo.png" alt="UnionPay" style="height:40px;">
     </div>
-
     <p>&copy; 2025 Hassan's Private Driver. All rights reserved.</p>
   </footer>
 
@@ -340,4 +348,4 @@ backToTop.addEventListener("click", () => {
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-  </html>
+</html>
