@@ -1,264 +1,296 @@
 <style>
-.wc-blog{
+.london-events-blog{
 max-width:1100px;
 margin:auto;
 font-family:Arial,sans-serif;
 color:#222;
 }
-.wc-hero{
-background:linear-gradient(90deg,#000b,#0004),
-url("https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1600&q=85") center/cover;
+.leb-hero{
+background:linear-gradient(90deg,#000c,#0003),
+url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85") center/cover;
 min-height:430px;
-border-radius:14px;
+border-radius:15px;
 display:flex;
 align-items:end;
 padding:45px;
 color:#fff;
-margin-bottom:45px;
+margin-bottom:40px;
 }
-.wc-hero h1{
-font-size:52px;
-line-height:1.05;
-margin:10px 0;
+.leb-hero h1{
 font-family:Georgia,serif;
+font-size:50px;
+line-height:1.08;
+margin:12px 0;
 }
-.wc-tag{
-color:#e0b765;
+.leb-tag{
+color:#e1b866;
 font-size:12px;
 font-weight:bold;
 letter-spacing:2px;
 text-transform:uppercase;
 }
-.wc-hero p{
-max-width:650px;
-line-height:1.7;
+.leb-hero p{
+max-width:680px;
+line-height:1.8;
 color:#eee;
 }
-.wc-layout{
-display:grid;
-grid-template-columns:1fr 300px;
-gap:40px;
+.leb-btn{
+display:inline-block;
+background:#c69a4d;
+color:#111;
+padding:12px 20px;
+border-radius:5px;
+font-weight:bold;
+text-decoration:none;
+margin-top:8px;
 }
-.wc-title{
+.leb-title{
 font-family:Georgia,serif;
 font-size:34px;
-margin-bottom:25px;
+margin:0 0 25px;
 }
-.wc-posts{
+.leb-layout{
+display:grid;
+grid-template-columns:1fr 290px;
+gap:35px;
+}
+.leb-posts{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:25px;
+gap:24px;
 }
-.wc-post{
+.leb-post{
 border:1px solid #e5e5e5;
-border-radius:10px;
+border-radius:11px;
 overflow:hidden;
 background:#fff;
 transition:.3s;
 }
-.wc-post:hover{
+.leb-post:hover{
 transform:translateY(-5px);
 box-shadow:0 12px 35px #0002;
 }
-.wc-post img{
+.leb-post img{
 width:100%;
 height:210px;
 object-fit:cover;
 }
-.wc-content{
+.leb-content{
 padding:20px;
 }
-.wc-cat{
+.leb-cat{
 font-size:11px;
 color:#ae8239;
 font-weight:bold;
 letter-spacing:1px;
 text-transform:uppercase;
 }
-.wc-post h2{
+.leb-post h2{
 font-family:Georgia,serif;
 font-size:23px;
 line-height:1.3;
+margin:10px 0;
 }
-.wc-post p{
-color:#666;
+.leb-post p{
 font-size:14px;
 line-height:1.7;
+color:#666;
 }
-.wc-read{
-color:#ae8239;
+.leb-date{
+font-size:12px;
 font-weight:bold;
-font-size:13px;
+color:#888;
 }
-.wc-side{
+.leb-side{
 background:#f5f3ef;
 padding:25px;
-border-radius:10px;
+border-radius:11px;
 height:max-content;
 }
-.wc-side h3{
+.leb-side h3{
 font-family:Georgia,serif;
 font-size:24px;
+margin-top:0;
 }
-.wc-side p{
+.leb-side p{
 font-size:14px;
 line-height:1.7;
 color:#666;
 }
-.wc-side a{
+.leb-side a{
 display:block;
 padding:10px 0;
 border-bottom:1px solid #ddd;
-color:#333;
 text-decoration:none;
+color:#333;
 }
-.wc-feature{
-margin-top:45px;
+.leb-feature{
+margin-top:40px;
 background:#111;
 color:#fff;
 padding:40px;
-border-radius:12px;
+border-radius:13px;
 }
-.wc-feature h2{
+.leb-feature h2{
 font-family:Georgia,serif;
 font-size:32px;
 }
-.wc-feature p{
+.leb-feature p{
 color:#ccc;
 line-height:1.8;
 }
-.wc-button{
-display:inline-block;
-background:#c49a4a;
-color:#111;
-padding:12px 20px;
-border-radius:5px;
-font-weight:bold;
-text-decoration:none;
+.leb-note{
+margin-top:25px;
+padding:18px;
+background:#f8f6f1;
+border-left:4px solid #c69a4d;
+font-size:14px;
+line-height:1.7;
 }
 @media(max-width:750px){
-.wc-layout{grid-template-columns:1fr}
-.wc-posts{grid-template-columns:1fr}
-.wc-hero{padding:28px;min-height:400px}
-.wc-hero h1{font-size:39px}
+.leb-layout{grid-template-columns:1fr}
+.leb-posts{grid-template-columns:1fr}
+.leb-hero{padding:28px;min-height:400px}
+.leb-hero h1{font-size:38px}
 }
 </style>
 
-<div class="wc-blog">
+<div class="london-events-blog">
 
-<div class="wc-hero">
+<div class="leb-hero">
 <div>
-<span class="wc-tag">Windsor Castle • Travel Blog</span>
-<h1>The Story of Windsor Castle</h1>
+<span class="leb-tag">London Events • 2026</span>
+<h1>Upcoming Events in London 2026</h1>
 <p>
-Discover more than 1,000 years of royal history, magnificent architecture,
-royal traditions and unforgettable stories from one of Britain's most famous castles.
+London is getting ready for another exciting season of festivals,
+culture, exhibitions, design, entertainment and unforgettable city experiences.
+Here are some of the events and attractions to look forward to.
 </p>
-<a class="wc-button" href="#windsor-posts">Read Stories →</a>
+<a class="leb-btn" href="#london-events">Explore Events →</a>
 </div>
 </div>
 
-<div class="wc-layout" id="windsor-posts">
+<div class="leb-layout" id="london-events">
 
 <div>
 
-<h2 class="wc-title">Latest Windsor Stories</h2>
+<h2 class="leb-title">What's Coming Up in London?</h2>
 
-<div class="wc-posts">
+<div class="leb-posts">
 
-<article class="wc-post">
-<img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=900&q=85">
-<div class="wc-content">
-<span class="wc-cat">History</span>
-<h2>A Thousand Years of Windsor Castle</h2>
-<p>
-From its Norman beginnings to its role as a royal residence,
-discover how Windsor Castle developed through the centuries.
-</p>
-<a class="wc-read" href="#">Read More →</a>
-</div>
-</article>
-
-<article class="wc-post">
-<img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=900&q=85">
-<div class="wc-content">
-<span class="wc-cat">Architecture</span>
-<h2>Inside the State Apartments</h2>
-<p>
-Explore the magnificent rooms, artwork, furniture and architectural
-details found inside Windsor Castle.
-</p>
-<a class="wc-read" href="#">Read More →</a>
-</div>
-</article>
-
-<article class="wc-post">
-<img src="https://images.unsplash.com/photo-1574958269340-fa927503f3dd?auto=format&fit=crop&w=900&q=85">
-<div class="wc-content">
-<span class="wc-cat">Royal Life</span>
-<h2>St George's Chapel</h2>
-<p>
-Discover the history and importance of the spectacular Gothic chapel
-within Windsor Castle.
-</p>
-<a class="wc-read" href="#">Read More →</a>
-</div>
-</article>
-
-<article class="wc-post">
+<article class="leb-post">
 <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=85">
-<div class="wc-content">
-<span class="wc-cat">Travel Guide</span>
-<h2>How to Spend a Day in Windsor</h2>
+<div class="leb-content">
+<span class="leb-cat">Architecture</span>
+<div class="leb-date">12–20 September 2026</div>
+<h2>London Open House Festival</h2>
 <p>
-A simple travel guide covering Windsor Castle, the historic town,
-riverside walks and nearby attractions.
+The London Open House Festival returns with hundreds of buildings,
+architectural tours and special opportunities to discover some of
+the capital's most interesting spaces.
 </p>
-<a class="wc-read" href="#">Read More →</a>
+<a class="leb-btn" href="https://www.open-city.org.uk/" target="_blank">
+Explore Event →
+</a>
+</div>
+</article>
+
+<article class="leb-post">
+<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85">
+<div class="leb-content">
+<span class="leb-cat">Design</span>
+<div class="leb-date">12–20 September 2026</div>
+<h2>London Design Festival</h2>
+<p>
+London Design Festival brings together designers, creative studios,
+installations, exhibitions and events across different areas of London.
+</p>
+<a class="leb-btn" href="https://www.londondesignfestival.com/" target="_blank">
+Discover More →
+</a>
+</div>
+</article>
+
+<article class="leb-post">
+<img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=900&q=85">
+<div class="leb-content">
+<span class="leb-cat">History</span>
+<div class="leb-date">September 2026 – July 2027</div>
+<h2>The Bayeux Tapestry Comes to London</h2>
+<p>
+One of the world's most famous medieval artworks is being displayed
+at the British Museum, giving visitors a rare opportunity to see the
+nearly 1,000-year-old tapestry in Britain.
+</p>
+<a class="leb-btn" href="https://www.britishmuseum.org/" target="_blank">
+British Museum →
+</a>
+</div>
+</article>
+
+<article class="leb-post">
+<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85">
+<div class="leb-content">
+<span class="leb-cat">October</span>
+<div class="leb-date">October 2026</div>
+<h2>London's Autumn Events</h2>
+<p>
+October brings film, culture, exhibitions, Halloween activities,
+Black History Month events and plenty of entertainment across London.
+</p>
+<a class="leb-btn" href="https://www.visitlondon.com/things-to-do/london-by-month/october" target="_blank">
+October Guide →
+</a>
 </div>
 </article>
 
 </div>
+
+<div class="leb-note">
+<strong>Travel Tip:</strong> Event dates, ticket availability and opening
+arrangements can change. Always check the official event website before
+planning your London trip.
 </div>
 
-<aside class="wc-side">
+</div>
 
-<h3>About Windsor</h3>
+<aside class="leb-side">
+
+<h3>London Events 2026</h3>
 
 <p>
-Windsor Castle is one of Britain's most important historic royal
-landmarks and has been associated with generations of monarchs.
+From architecture and design to history, exhibitions and entertainment,
+London has a packed calendar throughout the year.
 </p>
 
 <h3>Categories</h3>
 
-<a href="#">History</a>
-<a href="#">Royal Life</a>
-<a href="#">Architecture</a>
-<a href="#">Travel Guides</a>
-<a href="#">Windsor Town</a>
+<a href="#">London Events</a> <a href="#">Festivals</a> <a href="#">Culture</a> <a href="#">History</a> <a href="#">Architecture</a> <a href="#">Travel Guide</a>
+
+<h3>Popular Months</h3>
+
+<a href="#">September 2026</a> <a href="#">October 2026</a> <a href="#">November 2026</a> <a href="#">December 2026</a>
 
 </aside>
 
 </div>
 
-<div class="wc-feature">
+<div class="leb-feature">
 
-<span class="wc-tag">Featured Guide</span>
+<span class="leb-tag">London Travel Guide</span>
 
-<h2>Planning Your Windsor Castle Visit</h2>
+<h2>Planning a London Event Trip?</h2>
 
 <p>
-Windsor Castle is a working royal residence, so opening arrangements
-can change. Check the official Royal Collection Trust information
-before travelling.
+If you're visiting London for an event, give yourself extra time to
+explore the city's famous landmarks, historic streets, museums,
+restaurants and riverside attractions.
 </p>
 
-<a class="wc-button"
-href="https://www.rct.uk/visit/windsor-castle"
+<a class="leb-btn"
+href="https://www.visitlondon.com/things-to-do/whats-on"
 target="_blank">
-Official Windsor Castle Guide →
-</a>
+Official London Events Guide → </a>
 
 </div>
 
