@@ -1,297 +1,535 @@
-<style>
-.london-events-blog{
-max-width:1100px;
-margin:auto;
-font-family:Arial,sans-serif;
-color:#222;
-}
-.leb-hero{
-background:linear-gradient(90deg,#000c,#0003),
-url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=1600&q=85") center/cover;
-min-height:430px;
-border-radius:15px;
-display:flex;
-align-items:end;
-padding:45px;
-color:#fff;
-margin-bottom:40px;
-}
-.leb-hero h1{
-font-family:Georgia,serif;
-font-size:50px;
-line-height:1.08;
-margin:12px 0;
-}
-.leb-tag{
-color:#e1b866;
-font-size:12px;
-font-weight:bold;
-letter-spacing:2px;
-text-transform:uppercase;
-}
-.leb-hero p{
-max-width:680px;
-line-height:1.8;
-color:#eee;
-}
-.leb-btn{
-display:inline-block;
-background:#c69a4d;
-color:#111;
-padding:12px 20px;
-border-radius:5px;
-font-weight:bold;
-text-decoration:none;
-margin-top:8px;
-}
-.leb-title{
-font-family:Georgia,serif;
-font-size:34px;
-margin:0 0 25px;
-}
-.leb-layout{
-display:grid;
-grid-template-columns:1fr 290px;
-gap:35px;
-}
-.leb-posts{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:24px;
-}
-.leb-post{
-border:1px solid #e5e5e5;
-border-radius:11px;
-overflow:hidden;
-background:#fff;
-transition:.3s;
-}
-.leb-post:hover{
-transform:translateY(-5px);
-box-shadow:0 12px 35px #0002;
-}
-.leb-post img{
-width:100%;
-height:210px;
-object-fit:cover;
-}
-.leb-content{
-padding:20px;
-}
-.leb-cat{
-font-size:11px;
-color:#ae8239;
-font-weight:bold;
-letter-spacing:1px;
-text-transform:uppercase;
-}
-.leb-post h2{
-font-family:Georgia,serif;
-font-size:23px;
-line-height:1.3;
-margin:10px 0;
-}
-.leb-post p{
-font-size:14px;
-line-height:1.7;
-color:#666;
-}
-.leb-date{
-font-size:12px;
-font-weight:bold;
-color:#888;
-}
-.leb-side{
-background:#f5f3ef;
-padding:25px;
-border-radius:11px;
-height:max-content;
-}
-.leb-side h3{
-font-family:Georgia,serif;
-font-size:24px;
-margin-top:0;
-}
-.leb-side p{
-font-size:14px;
-line-height:1.7;
-color:#666;
-}
-.leb-side a{
-display:block;
-padding:10px 0;
-border-bottom:1px solid #ddd;
-text-decoration:none;
-color:#333;
-}
-.leb-feature{
-margin-top:40px;
-background:#111;
-color:#fff;
-padding:40px;
-border-radius:13px;
-}
-.leb-feature h2{
-font-family:Georgia,serif;
-font-size:32px;
-}
-.leb-feature p{
-color:#ccc;
-line-height:1.8;
-}
-.leb-note{
-margin-top:25px;
-padding:18px;
-background:#f8f6f1;
-border-left:4px solid #c69a4d;
-font-size:14px;
-line-height:1.7;
-}
-@media(max-width:750px){
-.leb-layout{grid-template-columns:1fr}
-.leb-posts{grid-template-columns:1fr}
-.leb-hero{padding:28px;min-height:400px}
-.leb-hero h1{font-size:38px}
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hire London</title>
 
-<div class="london-events-blog">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<div class="leb-hero">
-<div>
-<span class="leb-tag">London Events • 2026</span>
-<h1>Upcoming Events in London 2026</h1>
-<p>
-London is getting ready for another exciting season of festivals,
-culture, exhibitions, design, entertainment and unforgettable city experiences.
-Here are some of the events and attractions to look forward to.
-</p>
-<a class="leb-btn" href="#london-events">Explore Events →</a>
-</div>
-</div>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #111;
+        }
 
-<div class="leb-layout" id="london-events">
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-<div>
+        ul {
+            list-style: none;
+        }
 
-<h2 class="leb-title">What's Coming Up in London?</h2>
+        /* =========================
+           HEADER
+        ========================= */
 
-<div class="leb-posts">
+        .site-header {
+            width: 100%;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            z-index: 999;
+        }
 
-<article class="leb-post">
-<img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=85">
-<div class="leb-content">
-<span class="leb-cat">Architecture</span>
-<div class="leb-date">12–20 September 2026</div>
-<h2>London Open House Festival</h2>
-<p>
-The London Open House Festival returns with hundreds of buildings,
-architectural tours and special opportunities to discover some of
-the capital's most interesting spaces.
-</p>
-<a class="leb-btn" href="https://www.open-city.org.uk/" target="_blank">
-Explore Event →
-</a>
-</div>
-</article>
+        .header-container {
+            max-width: 1250px;
+            margin: auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-<article class="leb-post">
-<img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=85">
-<div class="leb-content">
-<span class="leb-cat">Design</span>
-<div class="leb-date">12–20 September 2026</div>
-<h2>London Design Festival</h2>
-<p>
-London Design Festival brings together designers, creative studios,
-installations, exhibitions and events across different areas of London.
-</p>
-<a class="leb-btn" href="https://www.londondesignfestival.com/" target="_blank">
-Discover More →
-</a>
-</div>
-</article>
+        .logo img {
+            max-width: 190px;
+            height: auto;
+            display: block;
+        }
 
-<article class="leb-post">
-<img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?auto=format&fit=crop&w=900&q=85">
-<div class="leb-content">
-<span class="leb-cat">History</span>
-<div class="leb-date">September 2026 – July 2027</div>
-<h2>The Bayeux Tapestry Comes to London</h2>
-<p>
-One of the world's most famous medieval artworks is being displayed
-at the British Museum, giving visitors a rare opportunity to see the
-nearly 1,000-year-old tapestry in Britain.
-</p>
-<a class="leb-btn" href="https://www.britishmuseum.org/" target="_blank">
-British Museum →
-</a>
-</div>
-</article>
+        .main-navigation {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
 
-<article class="leb-post">
-<img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=85">
-<div class="leb-content">
-<span class="leb-cat">October</span>
-<div class="leb-date">October 2026</div>
-<h2>London's Autumn Events</h2>
-<p>
-October brings film, culture, exhibitions, Halloween activities,
-Black History Month events and plenty of entertainment across London.
-</p>
-<a class="leb-btn" href="https://www.visitlondon.com/things-to-do/london-by-month/october" target="_blank">
-October Guide →
-</a>
-</div>
-</article>
+        .main-navigation > li {
+            position: relative;
+        }
 
-</div>
+        .main-navigation > li > a {
+            font-size: 15px;
+            font-weight: 500;
+            padding: 12px 0;
+            display: block;
+            white-space: nowrap;
+        }
 
-<div class="leb-note">
-<strong>Travel Tip:</strong> Event dates, ticket availability and opening
-arrangements can change. Always check the official event website before
-planning your London trip.
-</div>
+        .main-navigation > li > a:hover {
+            opacity: .65;
+        }
 
-</div>
+        /* Dropdown */
 
-<aside class="leb-side">
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 250px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,.12);
+            padding: 12px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px);
+            transition: .25s ease;
+        }
 
-<h3>London Events 2026</h3>
+        .dropdown:hover > .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-<p>
-From architecture and design to history, exhibitions and entertainment,
-London has a packed calendar throughout the year.
-</p>
+        .dropdown-menu li a {
+            display: block;
+            padding: 10px 18px;
+            font-size: 14px;
+            color: #222;
+        }
 
-<h3>Categories</h3>
+        .dropdown-menu li a:hover {
+            background: #f5f5f5;
+        }
 
-<a href="#">London Events</a> <a href="#">Festivals</a> <a href="#">Culture</a> <a href="#">History</a> <a href="#">Architecture</a> <a href="#">Travel Guide</a>
+        /* Quote Button */
 
-<h3>Popular Months</h3>
+        .quote-button {
+            background: #111;
+            color: #fff !important;
+            padding: 13px 22px !important;
+            border-radius: 2px;
+            font-weight: 600 !important;
+        }
 
-<a href="#">September 2026</a> <a href="#">October 2026</a> <a href="#">November 2026</a> <a href="#">December 2026</a>
+        .quote-button:hover {
+            background: #333;
+            opacity: 1 !important;
+        }
 
-</aside>
+        /* Mobile button */
 
-</div>
+        .mobile-toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 28px;
+            cursor: pointer;
+        }
 
-<div class="leb-feature">
 
-<span class="leb-tag">London Travel Guide</span>
+        /* =========================
+           PAGE SKELETON
+        ========================= */
 
-<h2>Planning a London Event Trip?</h2>
+        .page-skeleton {
+            min-height: 500px;
+        }
 
-<p>
-If you're visiting London for an event, give yourself extra time to
-explore the city's famous landmarks, historic streets, museums,
-restaurants and riverside attractions.
-</p>
 
-<a class="leb-btn"
-href="https://www.visitlondon.com/things-to-do/whats-on"
-target="_blank">
-Official London Events Guide → </a>
+        /* =========================
+           FOOTER
+        ========================= */
 
-</div>
+        .site-footer {
+            background: #111;
+            color: #fff;
+            padding: 70px 25px 25px;
+        }
 
-</div>
+        .footer-container {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            margin-bottom: 22px;
+            text-transform: uppercase;
+        }
+
+        .footer-column p {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: #ccc;
+            font-size: 14px;
+            transition: .2s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-logo img {
+            width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 22px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .footer-bottom p {
+            color: #999;
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 991px) {
+
+            .mobile-toggle {
+                display: block;
+            }
+
+            .main-navigation {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #fff;
+                padding: 15px 25px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                box-shadow: 0 10px 25px rgba(0,0,0,.1);
+            }
+
+            .main-navigation.active {
+                display: flex;
+            }
+
+            .main-navigation > li {
+                width: 100%;
+                border-bottom: 1px solid #eee;
+            }
+
+            .main-navigation > li > a {
+                padding: 14px 0;
+            }
+
+            .dropdown-menu {
+                position: static;
+                display: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                padding: 0 0 10px 15px;
+            }
+
+            .dropdown:hover > .dropdown-menu {
+                display: none;
+            }
+
+            .dropdown.open > .dropdown-menu {
+                display: block;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header-container {
+                padding: 15px 18px;
+            }
+
+            .logo img {
+                max-width: 150px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="site-header">
+
+    <div class="header-container">
+
+        <!-- Replace with your actual logo -->
+        <a href="/" class="logo">
+            <img src="logo.png" alt="Car Hire London">
+        </a>
+
+        <button class="mobile-toggle" id="mobileToggle">
+            ☰
+        </button>
+
+        <ul class="main-navigation" id="mainNavigation">
+
+            <li>
+                <a href="/">Home</a>
+            </li>
+
+            <li class="dropdown">
+                <a href="#">
+                    Services ▾
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li>
+                        <a href="#">Chauffeur Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Airport Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Charter Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#">Travel & Tour Services</a>
+                    </li>
+
+                </ul>
+            </li>
+
+
+            <li class="dropdown">
+                <a href="#">
+                    Our Fleet ▾
+                </a>
+
+                <ul class="dropdown-menu">
+
+                    <li><a href="#">Rolls-Royce</a></li>
+                    <li><a href="#">Bentley</a></li>
+                    <li><a href="#">Land Rover</a></li>
+                    <li><a href="#">Mercedes-Benz</a></li>
+                    <li><a href="#">BMW</a></li>
+                    <li><a href="#">Audi</a></li>
+                    <li><a href="#">Jaguar</a></li>
+                    <li><a href="#">Tesla</a></li>
+
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="#">Blog</a>
+            </li>
+
+            <li>
+                <a href="#">About Us</a>
+            </li>
+
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+
+            <li>
+                <a href="#" class="quote-button">
+                    Get a Quote
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     EMPTY PAGE AREA
+========================= -->
+
+<main class="page-skeleton">
+    <!-- Your page content will go here -->
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+        <div class="footer-grid">
+
+            <!-- Contact -->
+
+            <div class="footer-column">
+
+                <div class="footer-logo">
+                    <img src="logo-white.png" alt="Car Hire London">
+                </div>
+
+                <h3>Contact Info</h3>
+
+                <p>
+                    167, 169 Great Portland St,<br>
+                    London W1W 5PF,<br>
+                    United Kingdom
+                </p>
+
+                <p>
+                    +44 746 211 0841
+                </p>
+
+                <p>
+                    +44 204 577 4317
+                </p>
+
+                <p>
+                    info@carhirelondon.uk
+                </p>
+
+            </div>
+
+
+            <!-- About -->
+
+            <div class="footer-column">
+
+                <h3>About Us</h3>
+
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Partner With Us</a></li>
+                    <li><a href="#">Our Fleet</a></li>
+                    <li><a href="#">Our Blog</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">How to Book</a></li>
+                </ul>
+
+            </div>
+
+
+            <!-- Partners -->
+
+            <div class="footer-column">
+
+                <h3>Our Partners</h3>
+
+                <p>
+                    Our trusted partners and supported organisations.
+                </p>
+
+                <div class="partner-logos">
+                    <img src="partner-1.png" alt="Partner">
+                    <img src="partner-2.png" alt="Partner">
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                Copyright © 2026 Car Hire London.
+            </p>
+
+            <p>
+                All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    const mobileToggle = document.getElementById("mobileToggle");
+    const mainNavigation = document.getElementById("mainNavigation");
+
+    mobileToggle.addEventListener("click", function () {
+        mainNavigation.classList.toggle("active");
+    });
+
+
+    /* Mobile dropdown */
+
+    document.querySelectorAll(".dropdown > a").forEach(function(link) {
+
+        link.addEventListener("click", function(e) {
+
+            if (window.innerWidth <= 991) {
+
+                e.preventDefault();
+
+                const parent = this.parentElement;
+
+                parent.classList.toggle("open");
+
+            }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
