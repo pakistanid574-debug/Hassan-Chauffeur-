@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Car Hire London</title>
+    <title>Car Hire London | Premium Chauffeur Service</title>
 
     <style>
-        /* =========================================
+
+        /* =====================================================
            GLOBAL
-        ========================================= */
+        ===================================================== */
 
         * {
             margin: 0;
@@ -37,7 +38,7 @@
             padding: 0;
             font-family: Arial, Helvetica, sans-serif;
             color: var(--text);
-            background: #fff;
+            background: #ffffff;
         }
 
         a {
@@ -57,14 +58,15 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            HEADER
-        ========================================= */
+        ===================================================== */
 
         .site-header {
             width: 100%;
             background: var(--white);
             border-bottom: 1px solid var(--border);
+
             position: relative;
             z-index: 9999;
         }
@@ -72,8 +74,11 @@
         .header-container {
             width: 100%;
             max-width: 1250px;
+
             min-height: 88px;
+
             margin: 0 auto;
+
             padding: 15px 25px;
 
             display: flex;
@@ -82,29 +87,35 @@
         }
 
 
-        /* LOGO */
+        /* =====================================================
+           LOGO
+        ===================================================== */
 
         .logo {
             display: flex;
             align-items: center;
+
             flex-shrink: 0;
         }
 
         .logo img {
             display: block;
+
             width: 190px;
             height: auto;
         }
 
 
-        /* =========================================
+        /* =====================================================
            NAVIGATION
-        ========================================= */
+        ===================================================== */
 
         .main-navigation {
             display: flex;
+
             align-items: center;
             justify-content: flex-end;
+
             gap: 29px;
         }
 
@@ -114,14 +125,18 @@
 
         .main-navigation > li > a {
             display: flex;
+
             align-items: center;
+
             gap: 5px;
 
             padding: 12px 0;
 
             color: var(--text);
+
             font-size: 14px;
             font-weight: 500;
+
             line-height: 1;
 
             white-space: nowrap;
@@ -134,9 +149,9 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            DROPDOWN
-        ========================================= */
+        ===================================================== */
 
         .dropdown-arrow {
             font-size: 10px;
@@ -145,12 +160,13 @@
 
         .dropdown-menu {
             position: absolute;
+
             top: calc(100% + 15px);
             left: 0;
 
             width: 250px;
 
-            background: var(--white);
+            background: #ffffff;
 
             border-top: 2px solid var(--gold);
 
@@ -172,6 +188,7 @@
 
         .dropdown-menu::before {
             content: "";
+
             position: absolute;
 
             top: -8px;
@@ -188,6 +205,7 @@
         .dropdown:hover > .dropdown-menu {
             opacity: 1;
             visibility: visible;
+
             transform: translateY(0);
         }
 
@@ -202,7 +220,8 @@
 
             padding: 12px 20px;
 
-            color: #222;
+            color: #222222;
+
             font-size: 14px;
             font-weight: 400;
 
@@ -211,17 +230,20 @@
 
         .dropdown-menu li a:hover {
             background: #f8f8f8;
+
             color: var(--gold);
+
             padding-left: 24px;
         }
 
 
-        /* =========================================
-           GET A QUOTE BUTTON
-        ========================================= */
+        /* =====================================================
+           QUOTE BUTTON
+        ===================================================== */
 
         .quote-button {
             display: inline-flex !important;
+
             align-items: center;
             justify-content: center;
 
@@ -231,7 +253,7 @@
 
             background: var(--gold);
 
-            color: var(--white) !important;
+            color: #ffffff !important;
 
             font-size: 13px !important;
             font-weight: 600 !important;
@@ -243,15 +265,16 @@
 
         .quote-button:hover {
             background: var(--gold-hover);
+
             border-color: var(--gold-hover);
 
-            color: var(--white) !important;
+            color: #ffffff !important;
         }
 
 
-        /* =========================================
-           MOBILE TOGGLE
-        ========================================= */
+        /* =====================================================
+           MOBILE BUTTON
+        ===================================================== */
 
         .mobile-toggle {
             display: none;
@@ -260,6 +283,7 @@
             height: 42px;
 
             border: 1px solid #dddddd;
+
             background: #ffffff;
 
             color: var(--text);
@@ -274,36 +298,218 @@
 
         .mobile-toggle:hover {
             color: var(--gold);
+
             border-color: var(--gold);
         }
 
 
-        /* =========================================
-           EMPTY PAGE AREA
-        ========================================= */
+        /* =====================================================
+           HERO
+        ===================================================== */
 
-        .page-skeleton {
-            min-height: 520px;
-            background: #ffffff;
+        .hero-section {
+            position: relative;
+
+            width: 100%;
+
+            min-height: 650px;
+
+            display: flex;
+
+            align-items: center;
+
+            background-image:
+                url("hero.jpg");
+
+            background-size: cover;
+
+            background-position: center center;
+
+            background-repeat: no-repeat;
+
+            overflow: hidden;
         }
 
 
-        /* =========================================
+        /* HERO OVERLAY */
+
+        .hero-overlay {
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.80) 0%,
+                    rgba(0, 0, 0, 0.58) 42%,
+                    rgba(0, 0, 0, 0.20) 100%
+                );
+
+            z-index: 1;
+        }
+
+
+        /* HERO CONTAINER */
+
+        .hero-container {
+            position: relative;
+
+            width: 100%;
+
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            padding: 100px 25px;
+
+            z-index: 2;
+        }
+
+
+        /* HERO CONTENT */
+
+        .hero-content {
+            max-width: 680px;
+
+            color: #ffffff;
+        }
+
+
+        /* HERO SUBTITLE */
+
+        .hero-subtitle {
+            display: inline-block;
+
+            margin-bottom: 20px;
+
+            color: var(--gold);
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+        }
+
+
+        /* HERO TITLE */
+
+        .hero-content h1 {
+            margin: 0 0 22px;
+
+            color: #ffffff;
+
+            font-size: 58px;
+
+            font-weight: 600;
+
+            line-height: 1.12;
+
+            letter-spacing: -1px;
+        }
+
+
+        /* HERO TEXT */
+
+        .hero-content p {
+            max-width: 570px;
+
+            margin-bottom: 35px;
+
+            color: #eeeeee;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* HERO BUTTONS */
+
+        .hero-buttons {
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .hero-button {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 14px 28px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: all 0.25s ease;
+        }
+
+
+        /* PRIMARY */
+
+        .hero-button.primary {
+            background: var(--gold);
+
+            border: 1px solid var(--gold);
+
+            color: #ffffff;
+        }
+
+        .hero-button.primary:hover {
+            background: var(--gold-hover);
+
+            border-color: var(--gold-hover);
+        }
+
+
+        /* SECONDARY */
+
+        .hero-button.secondary {
+            background: transparent;
+
+            border: 1px solid rgba(255,255,255,0.75);
+
+            color: #ffffff;
+        }
+
+        .hero-button.secondary:hover {
+            background: #ffffff;
+
+            border-color: #ffffff;
+
+            color: #111111;
+        }
+
+
+        /* =====================================================
            FOOTER
-        ========================================= */
+        ===================================================== */
 
         .site-footer {
             width: 100%;
 
             background: var(--black);
-            color: var(--white);
+
+            color: #ffffff;
 
             padding: 70px 25px 25px;
         }
 
         .footer-container {
             width: 100%;
+
             max-width: 1250px;
+
             margin: 0 auto;
         }
 
@@ -321,11 +527,7 @@
         }
 
 
-        /* FOOTER COLUMNS */
-
-        .footer-column {
-            min-width: 0;
-        }
+        /* FOOTER HEADINGS */
 
         .footer-column h3 {
             margin: 0 0 22px;
@@ -333,6 +535,7 @@
             color: var(--gold);
 
             font-size: 13px;
+
             font-weight: 600;
 
             letter-spacing: 1.4px;
@@ -351,9 +554,11 @@
             display: block;
 
             width: 180px;
+
             max-height: 70px;
 
             object-fit: contain;
+
             object-position: left center;
 
             margin-bottom: 20px;
@@ -368,6 +573,7 @@
             color: var(--gray);
 
             font-size: 14px;
+
             font-weight: 400;
 
             line-height: 1.8;
@@ -393,13 +599,15 @@
         }
 
 
-        /* =========================================
-           PARTNER LOGOS
-        ========================================= */
+        /* =====================================================
+           PARTNERS
+        ===================================================== */
 
         .partner-logos {
             display: flex;
+
             align-items: center;
+
             flex-wrap: wrap;
 
             gap: 15px;
@@ -409,7 +617,9 @@
 
         .partner-logos img {
             width: auto;
+
             max-width: 100px;
+
             max-height: 50px;
 
             object-fit: contain;
@@ -424,14 +634,15 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            FOOTER BOTTOM
-        ========================================= */
+        ===================================================== */
 
         .footer-bottom {
             display: flex;
 
             justify-content: space-between;
+
             align-items: center;
 
             gap: 20px;
@@ -447,18 +658,20 @@
             color: #888888;
 
             font-size: 13px;
+
             line-height: 1.6;
         }
 
 
-        /* =========================================
+        /* =====================================================
            TABLET
-        ========================================= */
+        ===================================================== */
 
         @media (max-width: 1100px) {
 
             .header-container {
                 padding-left: 20px;
+
                 padding-right: 20px;
             }
 
@@ -472,16 +685,23 @@
 
             .quote-button {
                 padding-left: 18px !important;
+
                 padding-right: 18px !important;
+            }
+
+            .hero-content h1 {
+                font-size: 52px;
             }
         }
 
 
-        /* =========================================
+        /* =====================================================
            MOBILE
-        ========================================= */
+        ===================================================== */
 
         @media (max-width: 991px) {
+
+            /* HEADER */
 
             .header-container {
                 min-height: 75px;
@@ -498,7 +718,7 @@
             }
 
 
-            /* MOBILE NAV */
+            /* NAVIGATION */
 
             .main-navigation {
                 display: none;
@@ -512,12 +732,12 @@
 
                 padding: 10px 20px 20px;
 
-                background: var(--white);
+                background: #ffffff;
 
                 border-top: 1px solid var(--border);
 
                 box-shadow:
-                    0 12px 30px rgba(0, 0, 0, 0.10);
+                    0 12px 30px rgba(0,0,0,0.10);
 
                 flex-direction: column;
 
@@ -561,6 +781,7 @@
                 display: none;
 
                 opacity: 1;
+
                 visibility: visible;
 
                 transform: none;
@@ -588,10 +809,6 @@
                 font-size: 13px;
             }
 
-            .dropdown-menu li a:hover {
-                padding-left: 16px;
-            }
-
 
             /* MOBILE QUOTE */
 
@@ -599,7 +816,23 @@
                 width: 100%;
 
                 margin-top: 15px;
+
                 margin-bottom: 5px;
+            }
+
+
+            /* HERO */
+
+            .hero-section {
+                min-height: 580px;
+            }
+
+            .hero-container {
+                padding: 80px 25px;
+            }
+
+            .hero-content h1 {
+                font-size: 48px;
             }
 
 
@@ -613,11 +846,13 @@
         }
 
 
-        /* =========================================
+        /* =====================================================
            SMALL MOBILE
-        ========================================= */
+        ===================================================== */
 
         @media (max-width: 600px) {
+
+            /* HEADER */
 
             .header-container {
                 padding: 12px 18px;
@@ -627,6 +862,61 @@
                 width: 145px;
             }
 
+
+            /* HERO */
+
+            .hero-section {
+                min-height: 600px;
+
+                background-position: center center;
+            }
+
+            .hero-container {
+                padding: 70px 20px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-subtitle {
+                font-size: 11px;
+
+                letter-spacing: 1.5px;
+
+                margin-bottom: 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 38px;
+
+                line-height: 1.15;
+
+                letter-spacing: -0.5px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+
+                line-height: 1.6;
+
+                margin-bottom: 28px;
+            }
+
+            .hero-buttons {
+                width: 100%;
+
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .hero-button {
+                width: 100%;
+            }
+
+
+            /* FOOTER */
 
             .site-footer {
                 padding: 55px 20px 22px;
@@ -644,7 +934,6 @@
                 width: 160px;
             }
 
-
             .footer-bottom {
                 flex-direction: column;
 
@@ -653,6 +942,7 @@
                 gap: 8px;
             }
         }
+
     </style>
 </head>
 
@@ -660,9 +950,9 @@
 <body>
 
 
-    <!-- =========================================
+    <!-- =====================================================
          HEADER
-    ========================================== -->
+    ====================================================== -->
 
     <header class="site-header">
 
@@ -673,7 +963,6 @@
 
             <a href="/" class="logo">
 
-                <!-- Replace with your actual logo -->
                 <img
                     src="logo.png"
                     alt="Car Hire London"
@@ -682,7 +971,7 @@
             </a>
 
 
-            <!-- MOBILE BUTTON -->
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="mobile-toggle"
@@ -703,8 +992,6 @@
             >
 
 
-                <!-- HOME -->
-
                 <li>
                     <a href="/">
                         Home
@@ -716,7 +1003,10 @@
 
                 <li class="dropdown">
 
-                    <a href="#" class="dropdown-trigger">
+                    <a
+                        href="#"
+                        class="dropdown-trigger"
+                    >
 
                         Services
 
@@ -764,11 +1054,14 @@
                 </li>
 
 
-                <!-- FLEET -->
+                <!-- OUR FLEET -->
 
                 <li class="dropdown">
 
-                    <a href="#" class="dropdown-trigger">
+                    <a
+                        href="#"
+                        class="dropdown-trigger"
+                    >
 
                         Our Fleet
 
@@ -862,6 +1155,7 @@
 
                 </li>
 
+
             </ul>
 
         </div>
@@ -870,23 +1164,73 @@
 
 
 
-    <!-- =========================================
-         EMPTY CONTENT AREA
-    ========================================== -->
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-    <main class="page-skeleton">
+    <main>
 
-        <!--
-            YOUR PAGE CONTENT GOES HERE
-        -->
+        <section class="hero-section">
+
+            <div class="hero-overlay"></div>
+
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+
+                    <span class="hero-subtitle">
+                        PREMIUM CHAUFFEUR SERVICE
+                    </span>
+
+
+                    <h1>
+                        Luxury Chauffeur
+                        <br>
+                        Services Across London
+                    </h1>
+
+
+                    <p>
+                        Travel in comfort and style with our
+                        professional chauffeur service.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#"
+                            class="hero-button primary"
+                        >
+                            Get a Quote
+                        </a>
+
+
+                        <a
+                            href="#"
+                            class="hero-button secondary"
+                        >
+                            Explore Our Fleet
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          FOOTER
-    ========================================== -->
+    ====================================================== -->
 
     <footer class="site-footer">
 
@@ -896,16 +1240,13 @@
             <div class="footer-grid">
 
 
-                <!-- =================================
-                     FOOTER CONTACT
-                ================================== -->
+                <!-- CONTACT -->
 
                 <div class="footer-column">
 
 
                     <div class="footer-logo">
 
-                        <!-- Replace with white version if available -->
                         <img
                             src="logo-white.png"
                             alt="Car Hire London"
@@ -945,9 +1286,7 @@
 
 
 
-                <!-- =================================
-                     FOOTER ABOUT
-                ================================== -->
+                <!-- ABOUT -->
 
                 <div class="footer-column">
 
@@ -1000,9 +1339,7 @@
 
 
 
-                <!-- =================================
-                     FOOTER PARTNERS
-                ================================== -->
+                <!-- PARTNERS -->
 
                 <div class="footer-column">
 
@@ -1031,6 +1368,7 @@
 
                     </div>
 
+
                 </div>
 
 
@@ -1038,15 +1376,14 @@
 
 
 
-            <!-- =================================
-                 FOOTER BOTTOM
-            ================================== -->
+            <!-- FOOTER BOTTOM -->
 
             <div class="footer-bottom">
 
                 <p>
                     Copyright © 2026 Car Hire London.
                 </p>
+
 
                 <p>
                     All Rights Reserved.
@@ -1061,9 +1398,9 @@
 
 
 
-    <!-- =========================================
+    <!-- =====================================================
          JAVASCRIPT
-    ========================================== -->
+    ====================================================== -->
 
     <script>
 
@@ -1074,82 +1411,96 @@
             document.getElementById("mainNavigation");
 
 
-        /* =========================================
+        /* ==============================================
            MOBILE MENU
-        ========================================== */
+        ============================================== */
 
-        mobileToggle.addEventListener("click", function () {
+        mobileToggle.addEventListener(
+            "click",
+            function () {
 
-            mainNavigation.classList.toggle("active");
+                mainNavigation.classList.toggle("active");
 
-            const isOpen =
-                mainNavigation.classList.contains("active");
+                const isOpen =
+                    mainNavigation.classList.contains("active");
 
-            mobileToggle.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen
+                );
 
-            mobileToggle.innerHTML =
-                isOpen ? "✕" : "☰";
+                mobileToggle.innerHTML =
+                    isOpen ? "✕" : "☰";
 
-        });
+            }
+        );
 
 
-        /* =========================================
+        /* ==============================================
            MOBILE DROPDOWNS
-        ========================================== */
+        ============================================== */
 
         document
             .querySelectorAll(".dropdown-trigger")
             .forEach(function (link) {
 
-                link.addEventListener("click", function (event) {
+                link.addEventListener(
+                    "click",
+                    function (event) {
 
-                    if (window.innerWidth <= 991) {
+                        if (window.innerWidth <= 991) {
 
-                        event.preventDefault();
+                            event.preventDefault();
 
-                        const parent =
-                            this.closest(".dropdown");
+                            const parent =
+                                this.closest(".dropdown");
 
-                        parent.classList.toggle("open");
+                            parent.classList.toggle("open");
+
+                        }
 
                     }
-
-                });
+                );
 
             });
 
 
-        /* =========================================
-           RESET MOBILE MENU ON DESKTOP
-        ========================================== */
+        /* ==============================================
+           RESET ON DESKTOP
+        ============================================== */
 
-        window.addEventListener("resize", function () {
+        window.addEventListener(
+            "resize",
+            function () {
 
-            if (window.innerWidth > 991) {
+                if (window.innerWidth > 991) {
 
-                mainNavigation.classList.remove("active");
+                    mainNavigation.classList.remove(
+                        "active"
+                    );
 
-                mobileToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                    mobileToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
-                mobileToggle.innerHTML = "☰";
+                    mobileToggle.innerHTML = "☰";
 
-                document
-                    .querySelectorAll(".dropdown")
-                    .forEach(function (dropdown) {
 
-                        dropdown.classList.remove("open");
+                    document
+                        .querySelectorAll(".dropdown")
+                        .forEach(function (dropdown) {
 
-                    });
+                            dropdown.classList.remove(
+                                "open"
+                            );
+
+                        });
+
+                }
 
             }
-
-        });
+        );
 
     </script>
 
