@@ -3,60 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Car Hire London</title>
 
     <style>
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --gold: #b89445;
+            --gold-hover: #967735;
+            --black: #101010;
+            --dark: #171717;
+            --white: #ffffff;
+            --text: #1a1a1a;
+            --gray: #bdbdbd;
+            --border: #eeeeee;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
+            margin: 0;
+            padding: 0;
             font-family: Arial, Helvetica, sans-serif;
-            color: #111;
+            color: var(--text);
+            background: #fff;
         }
 
         a {
-            text-decoration: none;
             color: inherit;
+            text-decoration: none;
         }
 
         ul {
+            margin: 0;
+            padding: 0;
             list-style: none;
         }
 
-        /* =========================
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        /* =========================================
            HEADER
-        ========================= */
+        ========================================= */
 
         .site-header {
             width: 100%;
-            background: #fff;
-            border-bottom: 1px solid #eee;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
             position: relative;
-            z-index: 999;
+            z-index: 9999;
         }
 
         .header-container {
+            width: 100%;
             max-width: 1250px;
-            margin: auto;
-            padding: 18px 25px;
+            min-height: 88px;
+            margin: 0 auto;
+            padding: 15px 25px;
+
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
 
-        .logo img {
-            max-width: 190px;
-            height: auto;
-            display: block;
+
+        /* LOGO */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
         }
+
+        .logo img {
+            display: block;
+            width: 190px;
+            height: auto;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
         .main-navigation {
             display: flex;
             align-items: center;
-            gap: 30px;
+            justify-content: flex-end;
+            gap: 29px;
         }
 
         .main-navigation > li {
@@ -64,31 +113,76 @@
         }
 
         .main-navigation > li > a {
-            font-size: 15px;
-            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
             padding: 12px 0;
-            display: block;
+
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1;
+
             white-space: nowrap;
+
+            transition: all 0.25s ease;
         }
 
         .main-navigation > li > a:hover {
-            opacity: .65;
+            color: var(--gold);
         }
 
-        /* Dropdown */
+
+        /* =========================================
+           DROPDOWN
+        ========================================= */
+
+        .dropdown-arrow {
+            font-size: 10px;
+            margin-left: 3px;
+        }
 
         .dropdown-menu {
             position: absolute;
-            top: 100%;
+            top: calc(100% + 15px);
             left: 0;
-            min-width: 250px;
-            background: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,.12);
-            padding: 12px 0;
+
+            width: 250px;
+
+            background: var(--white);
+
+            border-top: 2px solid var(--gold);
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.12);
+
+            padding: 8px 0;
+
             opacity: 0;
             visibility: hidden;
+
             transform: translateY(8px);
-            transition: .25s ease;
+
+            transition:
+                opacity 0.25s ease,
+                visibility 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .dropdown-menu::before {
+            content: "";
+            position: absolute;
+
+            top: -8px;
+            left: 25px;
+
+            width: 0;
+            height: 0;
+
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-bottom: 7px solid var(--gold);
         }
 
         .dropdown:hover > .dropdown-menu {
@@ -97,144 +191,341 @@
             transform: translateY(0);
         }
 
+        .dropdown-menu li {
+            width: 100%;
+        }
+
         .dropdown-menu li a {
             display: block;
-            padding: 10px 18px;
-            font-size: 14px;
+
+            width: 100%;
+
+            padding: 12px 20px;
+
             color: #222;
+            font-size: 14px;
+            font-weight: 400;
+
+            transition: all 0.2s ease;
         }
 
         .dropdown-menu li a:hover {
-            background: #f5f5f5;
+            background: #f8f8f8;
+            color: var(--gold);
+            padding-left: 24px;
         }
 
-        /* Quote Button */
+
+        /* =========================================
+           GET A QUOTE BUTTON
+        ========================================= */
 
         .quote-button {
-            background: #111;
-            color: #fff !important;
-            padding: 13px 22px !important;
-            border-radius: 2px;
+            display: inline-flex !important;
+            align-items: center;
+            justify-content: center;
+
+            min-height: 43px;
+
+            padding: 13px 23px !important;
+
+            background: var(--gold);
+
+            color: var(--white) !important;
+
+            font-size: 13px !important;
             font-weight: 600 !important;
+
+            border: 1px solid var(--gold);
+
+            transition: all 0.25s ease;
         }
 
         .quote-button:hover {
-            background: #333;
-            opacity: 1 !important;
+            background: var(--gold-hover);
+            border-color: var(--gold-hover);
+
+            color: var(--white) !important;
         }
 
-        /* Mobile button */
+
+        /* =========================================
+           MOBILE TOGGLE
+        ========================================= */
 
         .mobile-toggle {
             display: none;
-            border: 0;
-            background: transparent;
-            font-size: 28px;
+
+            width: 42px;
+            height: 42px;
+
+            border: 1px solid #dddddd;
+            background: #ffffff;
+
+            color: var(--text);
+
+            font-size: 22px;
+
             cursor: pointer;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-toggle:hover {
+            color: var(--gold);
+            border-color: var(--gold);
         }
 
 
-        /* =========================
-           PAGE SKELETON
-        ========================= */
+        /* =========================================
+           EMPTY PAGE AREA
+        ========================================= */
 
         .page-skeleton {
-            min-height: 500px;
+            min-height: 520px;
+            background: #ffffff;
         }
 
 
-        /* =========================
+        /* =========================================
            FOOTER
-        ========================= */
+        ========================================= */
 
         .site-footer {
-            background: #111;
-            color: #fff;
+            width: 100%;
+
+            background: var(--black);
+            color: var(--white);
+
             padding: 70px 25px 25px;
         }
 
         .footer-container {
+            width: 100%;
             max-width: 1250px;
-            margin: auto;
+            margin: 0 auto;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr;
-            gap: 60px;
+
+            grid-template-columns:
+                1.5fr
+                1fr
+                1fr;
+
+            gap: 65px;
+
             padding-bottom: 50px;
         }
 
+
+        /* FOOTER COLUMNS */
+
+        .footer-column {
+            min-width: 0;
+        }
+
         .footer-column h3 {
-            font-size: 14px;
-            letter-spacing: 1px;
-            margin-bottom: 22px;
+            margin: 0 0 22px;
+
+            color: var(--gold);
+
+            font-size: 13px;
+            font-weight: 600;
+
+            letter-spacing: 1.4px;
+
             text-transform: uppercase;
         }
 
-        .footer-column p {
-            font-size: 14px;
-            line-height: 1.8;
-            color: #ccc;
-            margin-bottom: 8px;
+
+        /* FOOTER LOGO */
+
+        .footer-logo {
+            margin-bottom: 5px;
         }
+
+        .footer-logo img {
+            display: block;
+
+            width: 180px;
+            max-height: 70px;
+
+            object-fit: contain;
+            object-position: left center;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* FOOTER TEXT */
+
+        .footer-column p {
+            margin: 0 0 9px;
+
+            color: var(--gray);
+
+            font-size: 14px;
+            font-weight: 400;
+
+            line-height: 1.8;
+        }
+
+
+        /* FOOTER LINKS */
 
         .footer-column ul li {
             margin-bottom: 12px;
         }
 
         .footer-column ul li a {
-            color: #ccc;
+            color: var(--gray);
+
             font-size: 14px;
-            transition: .2s ease;
+
+            transition: color 0.2s ease;
         }
 
         .footer-column ul li a:hover {
-            color: #fff;
+            color: var(--gold);
         }
 
-        .footer-logo img {
-            width: 180px;
-            margin-bottom: 20px;
+
+        /* =========================================
+           PARTNER LOGOS
+        ========================================= */
+
+        .partner-logos {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 20px;
         }
+
+        .partner-logos img {
+            width: auto;
+            max-width: 100px;
+            max-height: 50px;
+
+            object-fit: contain;
+
+            opacity: 0.85;
+
+            transition: opacity 0.2s ease;
+        }
+
+        .partner-logos img:hover {
+            opacity: 1;
+        }
+
+
+        /* =========================================
+           FOOTER BOTTOM
+        ========================================= */
 
         .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 22px;
             display: flex;
+
             justify-content: space-between;
             align-items: center;
+
             gap: 20px;
+
+            padding-top: 22px;
+
+            border-top: 1px solid #2d2d2d;
         }
 
         .footer-bottom p {
-            color: #999;
+            margin: 0;
+
+            color: #888888;
+
             font-size: 13px;
+            line-height: 1.6;
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* =========================================
+           TABLET
+        ========================================= */
 
-        @media (max-width: 991px) {
+        @media (max-width: 1100px) {
 
-            .mobile-toggle {
-                display: block;
+            .header-container {
+                padding-left: 20px;
+                padding-right: 20px;
             }
 
             .main-navigation {
+                gap: 20px;
+            }
+
+            .main-navigation > li > a {
+                font-size: 13px;
+            }
+
+            .quote-button {
+                padding-left: 18px !important;
+                padding-right: 18px !important;
+            }
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 991px) {
+
+            .header-container {
+                min-height: 75px;
+
+                padding: 13px 20px;
+            }
+
+            .logo img {
+                width: 160px;
+            }
+
+            .mobile-toggle {
+                display: flex;
+            }
+
+
+            /* MOBILE NAV */
+
+            .main-navigation {
                 display: none;
+
                 position: absolute;
+
                 top: 100%;
                 left: 0;
+
                 width: 100%;
-                background: #fff;
-                padding: 15px 25px;
+
+                padding: 10px 20px 20px;
+
+                background: var(--white);
+
+                border-top: 1px solid var(--border);
+
+                box-shadow:
+                    0 12px 30px rgba(0, 0, 0, 0.10);
+
                 flex-direction: column;
+
                 align-items: flex-start;
+
+                justify-content: flex-start;
+
                 gap: 0;
-                box-shadow: 0 10px 25px rgba(0,0,0,.1);
             }
 
             .main-navigation.active {
@@ -243,24 +534,47 @@
 
             .main-navigation > li {
                 width: 100%;
-                border-bottom: 1px solid #eee;
+
+                border-bottom: 1px solid #eeeeee;
+            }
+
+            .main-navigation > li:last-child {
+                border-bottom: 0;
             }
 
             .main-navigation > li > a {
-                padding: 14px 0;
+                width: 100%;
+
+                padding: 15px 0;
+
+                font-size: 14px;
             }
+
+
+            /* MOBILE DROPDOWN */
 
             .dropdown-menu {
                 position: static;
+
+                width: 100%;
+
                 display: none;
+
                 opacity: 1;
                 visibility: visible;
+
                 transform: none;
+
+                border-top: 0;
+
                 box-shadow: none;
-                padding: 0 0 10px 15px;
+
+                padding: 0 0 8px 15px;
+
+                transition: none;
             }
 
-            .dropdown:hover > .dropdown-menu {
+            .dropdown-menu::before {
                 display: none;
             }
 
@@ -268,268 +582,576 @@
                 display: block;
             }
 
+            .dropdown-menu li a {
+                padding: 10px 12px;
+
+                font-size: 13px;
+            }
+
+            .dropdown-menu li a:hover {
+                padding-left: 16px;
+            }
+
+
+            /* MOBILE QUOTE */
+
+            .main-navigation .quote-button {
+                width: 100%;
+
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+
+
+            /* FOOTER */
+
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 40px;
+
+                gap: 45px;
             }
         }
+
+
+        /* =========================================
+           SMALL MOBILE
+        ========================================= */
 
         @media (max-width: 600px) {
 
             .header-container {
-                padding: 15px 18px;
+                padding: 12px 18px;
             }
 
             .logo img {
-                max-width: 150px;
+                width: 145px;
+            }
+
+
+            .site-footer {
+                padding: 55px 20px 22px;
             }
 
             .footer-grid {
                 grid-template-columns: 1fr;
+
+                gap: 38px;
+
+                padding-bottom: 40px;
             }
+
+            .footer-logo img {
+                width: 160px;
+            }
+
 
             .footer-bottom {
                 flex-direction: column;
+
                 align-items: flex-start;
+
+                gap: 8px;
             }
         }
     </style>
 </head>
 
+
 <body>
 
 
-<!-- =========================
-     HEADER
-========================= -->
+    <!-- =========================================
+         HEADER
+    ========================================== -->
 
-<header class="site-header">
+    <header class="site-header">
 
-    <div class="header-container">
-
-        <!-- Replace with your actual logo -->
-        <a href="/" class="logo">
-            <img src="logo.png" alt="Car Hire London">
-        </a>
-
-        <button class="mobile-toggle" id="mobileToggle">
-            ☰
-        </button>
-
-        <ul class="main-navigation" id="mainNavigation">
-
-            <li>
-                <a href="/">Home</a>
-            </li>
-
-            <li class="dropdown">
-                <a href="#">
-                    Services ▾
-                </a>
-
-                <ul class="dropdown-menu">
-
-                    <li>
-                        <a href="#">Chauffeur Services</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Airport Services</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Charter Services</a>
-                    </li>
-
-                    <li>
-                        <a href="#">Travel & Tour Services</a>
-                    </li>
-
-                </ul>
-            </li>
+        <div class="header-container">
 
 
-            <li class="dropdown">
-                <a href="#">
-                    Our Fleet ▾
-                </a>
+            <!-- LOGO -->
 
-                <ul class="dropdown-menu">
+            <a href="/" class="logo">
 
-                    <li><a href="#">Rolls-Royce</a></li>
-                    <li><a href="#">Bentley</a></li>
-                    <li><a href="#">Land Rover</a></li>
-                    <li><a href="#">Mercedes-Benz</a></li>
-                    <li><a href="#">BMW</a></li>
-                    <li><a href="#">Audi</a></li>
-                    <li><a href="#">Jaguar</a></li>
-                    <li><a href="#">Tesla</a></li>
+                <!-- Replace with your actual logo -->
+                <img
+                    src="logo.png"
+                    alt="Car Hire London"
+                >
 
-                </ul>
-            </li>
+            </a>
 
 
-            <li>
-                <a href="#">Blog</a>
-            </li>
+            <!-- MOBILE BUTTON -->
 
-            <li>
-                <a href="#">About Us</a>
-            </li>
-
-            <li>
-                <a href="#">Contact Us</a>
-            </li>
-
-            <li>
-                <a href="#" class="quote-button">
-                    Get a Quote
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</header>
+            <button
+                class="mobile-toggle"
+                id="mobileToggle"
+                type="button"
+                aria-label="Open Menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
 
 
-<!-- =========================
-     EMPTY PAGE AREA
-========================= -->
+            <!-- NAVIGATION -->
 
-<main class="page-skeleton">
-    <!-- Your page content will go here -->
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer class="site-footer">
-
-    <div class="footer-container">
-
-        <div class="footer-grid">
-
-            <!-- Contact -->
-
-            <div class="footer-column">
-
-                <div class="footer-logo">
-                    <img src="logo-white.png" alt="Car Hire London">
-                </div>
-
-                <h3>Contact Info</h3>
-
-                <p>
-                    167, 169 Great Portland St,<br>
-                    London W1W 5PF,<br>
-                    United Kingdom
-                </p>
-
-                <p>
-                    +44 746 211 0841
-                </p>
-
-                <p>
-                    +44 204 577 4317
-                </p>
-
-                <p>
-                    info@carhirelondon.uk
-                </p>
-
-            </div>
+            <ul
+                class="main-navigation"
+                id="mainNavigation"
+            >
 
 
-            <!-- About -->
+                <!-- HOME -->
 
-            <div class="footer-column">
-
-                <h3>About Us</h3>
-
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Partner With Us</a></li>
-                    <li><a href="#">Our Fleet</a></li>
-                    <li><a href="#">Our Blog</a></li>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">How to Book</a></li>
-                </ul>
-
-            </div>
+                <li>
+                    <a href="/">
+                        Home
+                    </a>
+                </li>
 
 
-            <!-- Partners -->
+                <!-- SERVICES -->
 
-            <div class="footer-column">
+                <li class="dropdown">
 
-                <h3>Our Partners</h3>
+                    <a href="#" class="dropdown-trigger">
 
-                <p>
-                    Our trusted partners and supported organisations.
-                </p>
+                        Services
 
-                <div class="partner-logos">
-                    <img src="partner-1.png" alt="Partner">
-                    <img src="partner-2.png" alt="Partner">
-                </div>
+                        <span class="dropdown-arrow">
+                            ▾
+                        </span>
 
-            </div>
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="#">
+                                Chauffeur Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Airport Transfers
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Corporate Travel
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Events &amp; Roadshows
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Tours &amp; Travel
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <!-- FLEET -->
+
+                <li class="dropdown">
+
+                    <a href="#" class="dropdown-trigger">
+
+                        Our Fleet
+
+                        <span class="dropdown-arrow">
+                            ▾
+                        </span>
+
+                    </a>
+
+
+                    <ul class="dropdown-menu">
+
+                        <li>
+                            <a href="#">
+                                Rolls-Royce
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Bentley
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Mercedes-Benz
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                BMW
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Range Rover
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Audi
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+
+                <!-- BLOG -->
+
+                <li>
+                    <a href="#">
+                        Blog
+                    </a>
+                </li>
+
+
+                <!-- ABOUT -->
+
+                <li>
+                    <a href="#">
+                        About Us
+                    </a>
+                </li>
+
+
+                <!-- CONTACT -->
+
+                <li>
+                    <a href="#">
+                        Contact Us
+                    </a>
+                </li>
+
+
+                <!-- QUOTE -->
+
+                <li>
+
+                    <a
+                        href="#"
+                        class="quote-button"
+                    >
+                        Get a Quote
+                    </a>
+
+                </li>
+
+            </ul>
 
         </div>
 
+    </header>
 
-        <div class="footer-bottom">
 
-            <p>
-                Copyright © 2026 Car Hire London.
-            </p>
 
-            <p>
-                All Rights Reserved.
-            </p>
+    <!-- =========================================
+         EMPTY CONTENT AREA
+    ========================================== -->
+
+    <main class="page-skeleton">
+
+        <!--
+            YOUR PAGE CONTENT GOES HERE
+        -->
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <div class="footer-grid">
+
+
+                <!-- =================================
+                     FOOTER CONTACT
+                ================================== -->
+
+                <div class="footer-column">
+
+
+                    <div class="footer-logo">
+
+                        <!-- Replace with white version if available -->
+                        <img
+                            src="logo-white.png"
+                            alt="Car Hire London"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Contact Info
+                    </h3>
+
+
+                    <p>
+                        167, 169 Great Portland St,<br>
+                        London W1W 5PF,<br>
+                        United Kingdom
+                    </p>
+
+
+                    <p>
+                        +44 746 211 0841
+                    </p>
+
+
+                    <p>
+                        +44 204 577 4317
+                    </p>
+
+
+                    <p>
+                        info@carhirelondon.uk
+                    </p>
+
+
+                </div>
+
+
+
+                <!-- =================================
+                     FOOTER ABOUT
+                ================================== -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        About Us
+                    </h3>
+
+
+                    <ul>
+
+                        <li>
+                            <a href="#">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Partner With Us
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Our Fleet
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Our Blog
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                Terms &amp; Conditions
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#">
+                                How to Book
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- =================================
+                     FOOTER PARTNERS
+                ================================== -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Our Partners
+                    </h3>
+
+
+                    <p>
+                        Our trusted partners and
+                        supported organisations.
+                    </p>
+
+
+                    <div class="partner-logos">
+
+                        <img
+                            src="partner-1.png"
+                            alt="Partner"
+                        >
+
+                        <img
+                            src="partner-2.png"
+                            alt="Partner"
+                        >
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================
+                 FOOTER BOTTOM
+            ================================== -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    Copyright © 2026 Car Hire London.
+                </p>
+
+                <p>
+                    All Rights Reserved.
+                </p>
+
+            </div>
+
 
         </div>
 
-    </div>
-
-</footer>
+    </footer>
 
 
-<script>
 
-    const mobileToggle = document.getElementById("mobileToggle");
-    const mainNavigation = document.getElementById("mainNavigation");
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
-    mobileToggle.addEventListener("click", function () {
-        mainNavigation.classList.toggle("active");
-    });
+    <script>
+
+        const mobileToggle =
+            document.getElementById("mobileToggle");
+
+        const mainNavigation =
+            document.getElementById("mainNavigation");
 
 
-    /* Mobile dropdown */
+        /* =========================================
+           MOBILE MENU
+        ========================================== */
 
-    document.querySelectorAll(".dropdown > a").forEach(function(link) {
+        mobileToggle.addEventListener("click", function () {
 
-        link.addEventListener("click", function(e) {
+            mainNavigation.classList.toggle("active");
 
-            if (window.innerWidth <= 991) {
+            const isOpen =
+                mainNavigation.classList.contains("active");
 
-                e.preventDefault();
+            mobileToggle.setAttribute(
+                "aria-expanded",
+                isOpen
+            );
 
-                const parent = this.parentElement;
+            mobileToggle.innerHTML =
+                isOpen ? "✕" : "☰";
 
-                parent.classList.toggle("open");
+        });
+
+
+        /* =========================================
+           MOBILE DROPDOWNS
+        ========================================== */
+
+        document
+            .querySelectorAll(".dropdown-trigger")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function (event) {
+
+                    if (window.innerWidth <= 991) {
+
+                        event.preventDefault();
+
+                        const parent =
+                            this.closest(".dropdown");
+
+                        parent.classList.toggle("open");
+
+                    }
+
+                });
+
+            });
+
+
+        /* =========================================
+           RESET MOBILE MENU ON DESKTOP
+        ========================================== */
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 991) {
+
+                mainNavigation.classList.remove("active");
+
+                mobileToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                mobileToggle.innerHTML = "☰";
+
+                document
+                    .querySelectorAll(".dropdown")
+                    .forEach(function (dropdown) {
+
+                        dropdown.classList.remove("open");
+
+                    });
 
             }
 
         });
 
-    });
-
-</script>
+    </script>
 
 </body>
 </html>
