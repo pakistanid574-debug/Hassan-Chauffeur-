@@ -1,81 +1,265 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Website Closed</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }.card {
-  background: #111827;
-  border-radius: 16px;
-  padding: 40px 32px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-  max-width: 500px;
-  width: 90%;
+<style>
+.wc-blog{
+max-width:1100px;
+margin:auto;
+font-family:Arial,sans-serif;
+color:#222;
 }
-
-.error-code {
-  font-size: 72px;
-  font-weight: bold;
-  color: #ef4444;
-  margin-bottom: 10px;
+.wc-hero{
+background:linear-gradient(90deg,#000b,#0004),
+url("https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=1600&q=85") center/cover;
+min-height:430px;
+border-radius:14px;
+display:flex;
+align-items:end;
+padding:45px;
+color:#fff;
+margin-bottom:45px;
 }
-
-.title {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 12px;
+.wc-hero h1{
+font-size:52px;
+line-height:1.05;
+margin:10px 0;
+font-family:Georgia,serif;
 }
-
-.message {
-  font-size: 16px;
-  color: #9ca3af;
-  line-height: 1.6;
+.wc-tag{
+color:#e0b765;
+font-size:12px;
+font-weight:bold;
+letter-spacing:2px;
+text-transform:uppercase;
 }
-
-.date {
-  margin-top: 20px;
-  font-size: 14px;
-  color: #6b7280;
+.wc-hero p{
+max-width:650px;
+line-height:1.7;
+color:#eee;
 }
-
-.btn {
-  margin-top: 28px;
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 10px;
-  background: #ef4444;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.2s ease;
+.wc-layout{
+display:grid;
+grid-template-columns:1fr 300px;
+gap:40px;
 }
-
-.btn:hover {
-  background: #dc2626;
+.wc-title{
+font-family:Georgia,serif;
+font-size:34px;
+margin-bottom:25px;
 }
+.wc-posts{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+.wc-post{
+border:1px solid #e5e5e5;
+border-radius:10px;
+overflow:hidden;
+background:#fff;
+transition:.3s;
+}
+.wc-post:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 35px #0002;
+}
+.wc-post img{
+width:100%;
+height:210px;
+object-fit:cover;
+}
+.wc-content{
+padding:20px;
+}
+.wc-cat{
+font-size:11px;
+color:#ae8239;
+font-weight:bold;
+letter-spacing:1px;
+text-transform:uppercase;
+}
+.wc-post h2{
+font-family:Georgia,serif;
+font-size:23px;
+line-height:1.3;
+}
+.wc-post p{
+color:#666;
+font-size:14px;
+line-height:1.7;
+}
+.wc-read{
+color:#ae8239;
+font-weight:bold;
+font-size:13px;
+}
+.wc-side{
+background:#f5f3ef;
+padding:25px;
+border-radius:10px;
+height:max-content;
+}
+.wc-side h3{
+font-family:Georgia,serif;
+font-size:24px;
+}
+.wc-side p{
+font-size:14px;
+line-height:1.7;
+color:#666;
+}
+.wc-side a{
+display:block;
+padding:10px 0;
+border-bottom:1px solid #ddd;
+color:#333;
+text-decoration:none;
+}
+.wc-feature{
+margin-top:45px;
+background:#111;
+color:#fff;
+padding:40px;
+border-radius:12px;
+}
+.wc-feature h2{
+font-family:Georgia,serif;
+font-size:32px;
+}
+.wc-feature p{
+color:#ccc;
+line-height:1.8;
+}
+.wc-button{
+display:inline-block;
+background:#c49a4a;
+color:#111;
+padding:12px 20px;
+border-radius:5px;
+font-weight:bold;
+text-decoration:none;
+}
+@media(max-width:750px){
+.wc-layout{grid-template-columns:1fr}
+.wc-posts{grid-template-columns:1fr}
+.wc-hero{padding:28px;min-height:400px}
+.wc-hero h1{font-size:39px}
+}
+</style>
 
-  </style>
-</head>
-<body>
-  <div class="card">
-    <div class="error-code">Closed</div>
-    <div class="title">Website Closed Permanently</div>
-    <div class="message">
-      This website has been permanently closed and is no longer available.
-      Please contact support if you believe this is a mistake.
-    </div>
-    <div class="date">Effective Date: March 3, 2026</div>
-    <a href="#" class="btn">Go Back</a>
-  </div>
-</body>
-</html>
+<div class="wc-blog">
+
+<div class="wc-hero">
+<div>
+<span class="wc-tag">Windsor Castle • Travel Blog</span>
+<h1>The Story of Windsor Castle</h1>
+<p>
+Discover more than 1,000 years of royal history, magnificent architecture,
+royal traditions and unforgettable stories from one of Britain's most famous castles.
+</p>
+<a class="wc-button" href="#windsor-posts">Read Stories →</a>
+</div>
+</div>
+
+<div class="wc-layout" id="windsor-posts">
+
+<div>
+
+<h2 class="wc-title">Latest Windsor Stories</h2>
+
+<div class="wc-posts">
+
+<article class="wc-post">
+<img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?auto=format&fit=crop&w=900&q=85">
+<div class="wc-content">
+<span class="wc-cat">History</span>
+<h2>A Thousand Years of Windsor Castle</h2>
+<p>
+From its Norman beginnings to its role as a royal residence,
+discover how Windsor Castle developed through the centuries.
+</p>
+<a class="wc-read" href="#">Read More →</a>
+</div>
+</article>
+
+<article class="wc-post">
+<img src="https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=900&q=85">
+<div class="wc-content">
+<span class="wc-cat">Architecture</span>
+<h2>Inside the State Apartments</h2>
+<p>
+Explore the magnificent rooms, artwork, furniture and architectural
+details found inside Windsor Castle.
+</p>
+<a class="wc-read" href="#">Read More →</a>
+</div>
+</article>
+
+<article class="wc-post">
+<img src="https://images.unsplash.com/photo-1574958269340-fa927503f3dd?auto=format&fit=crop&w=900&q=85">
+<div class="wc-content">
+<span class="wc-cat">Royal Life</span>
+<h2>St George's Chapel</h2>
+<p>
+Discover the history and importance of the spectacular Gothic chapel
+within Windsor Castle.
+</p>
+<a class="wc-read" href="#">Read More →</a>
+</div>
+</article>
+
+<article class="wc-post">
+<img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=900&q=85">
+<div class="wc-content">
+<span class="wc-cat">Travel Guide</span>
+<h2>How to Spend a Day in Windsor</h2>
+<p>
+A simple travel guide covering Windsor Castle, the historic town,
+riverside walks and nearby attractions.
+</p>
+<a class="wc-read" href="#">Read More →</a>
+</div>
+</article>
+
+</div>
+</div>
+
+<aside class="wc-side">
+
+<h3>About Windsor</h3>
+
+<p>
+Windsor Castle is one of Britain's most important historic royal
+landmarks and has been associated with generations of monarchs.
+</p>
+
+<h3>Categories</h3>
+
+<a href="#">History</a>
+<a href="#">Royal Life</a>
+<a href="#">Architecture</a>
+<a href="#">Travel Guides</a>
+<a href="#">Windsor Town</a>
+
+</aside>
+
+</div>
+
+<div class="wc-feature">
+
+<span class="wc-tag">Featured Guide</span>
+
+<h2>Planning Your Windsor Castle Visit</h2>
+
+<p>
+Windsor Castle is a working royal residence, so opening arrangements
+can change. Check the official Royal Collection Trust information
+before travelling.
+</p>
+
+<a class="wc-button"
+href="https://www.rct.uk/visit/windsor-castle"
+target="_blank">
+Official Windsor Castle Guide →
+</a>
+
+</div>
+
+</div>
